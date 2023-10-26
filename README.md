@@ -12,7 +12,7 @@ cd slack-gpu
 
 # Install
 chmod +x install.sh
-conda create -n slack python=3.10 -y && conda activate slack
+conda create -n slack python=3.10 -y && conda activate slack # Optional
 ./install.sh
 
 # Configuration File
