@@ -1,6 +1,5 @@
-# slack-gpu
+# GNock-gnock
 Send GPU status to slack server
-
 
 ## Steps
 
@@ -39,13 +38,15 @@ sudo systemctl enable cron.service
 ```
 
 **Spawning Jobs on `cron`**
-1. Go to cron job batch file via `crontab -e`
-2. Append the following
+1. Make `run.sh` executable via `chmod +x run.sh`
+2. Go to cron job batch file via `crontab -e`
+3. Append the following
     ```bash
     0 9 * * * (PATH_HERE)/run.sh
     ```
-Please do `chmod +x run.sh` before batching a job.
+    _Need to test if this cron is valid!_
 
+**Misc.**
 + If somebody encountered `systemctel command not found`: Do `sudo apt-get install systemd`
 + Check if cron is running: `sudo service cron status`
 
