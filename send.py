@@ -21,9 +21,9 @@ def get_gputil() -> str:
     GPUs = getGPUs()
       
     msg = f' ID  | Name{" ":<27} |        Memory-Usage       | GPU-Util |\n'
-    msg += '-------------------------------------------------------------------------------\n'
+    msg += '-----|---------------------------------|---------------------------|----------|\n'
     for g in GPUs:
-        msg += f' {g.id:<3}  | {g.name:<30} | {g.memoryUsed:>7.0f} MiB / {g.memoryTotal:>7.0f} MiB | {g.load*100:>6.0f} % \n'
+        msg += f' {g.id:<3} | {g.name:<31} | {g.memoryUsed:>7.0f} MiB / {g.memoryTotal:>7.0f} MiB | {g.load*100:>6.0f} % |\n'
     return msg
 
 
