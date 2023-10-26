@@ -2,8 +2,7 @@ import subprocess
 import os
 
 from dotenv import load_dotenv
-
-from src.gpus import showUtilization
+from GPUtil import getGPUs
 
 
 load_dotenv()
@@ -19,7 +18,12 @@ def get_nvidia_smi() -> str:
     
 
 def get_gputil() -> str:
-    msg = showUtilization(all=True, useOldCode=True)
+    GPUs = getGPUs()
+      
+    msg = f' ID  | Name{" ":<27} |        Memory-Usage       | GPU-Util |\n'
+    msg += '-------------------------------------------------------------------------------\n'
+    for g in GPUs:
+        msg += f' {g.id:<3}  | {g.name:<30} | {g.memoryUsed:>7.0f} MiB / {g.memoryTotal:>7.0f} MiB | {g.load*100:>6.0f} % \n'
     return msg
 
 
@@ -37,7 +41,7 @@ def concat_msg() -> str:
     server_msg = get_server()
     gpu_msg = get_gputil()
     
-    msg = f"{server_msg}\n{gpu_msg}"
+    msg = f"```{server_msg}\n{gpu_msg}```"
     return msg
 
 
