@@ -55,7 +55,7 @@ sudo systemctl enable cron.service
     - I'm using this `curl ...` command in this excercise. Just so you know.
 
 ## TODO
-[] Receive send command from slacks so that the user can get a _current_ status of GPUs.
+[ ] Receive send command from slacks so that the user can get a _current_ status of GPUs.
     - [Slash commands](https://api.slack.com/apps/A063KBUA5DE/slash-commands?)
 
-[] Do the same thing for storages
+[ ] Do the same thing for storages
