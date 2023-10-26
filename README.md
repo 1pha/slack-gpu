@@ -53,3 +53,8 @@ sudo systemctl enable cron.service
 ## Reference
 + [How to start with sending messages to your slack workspace from external sources](https://api.slack.com/apps/A062VRB6W7L/incoming-webhooks?success=1)
     - I'm using this `curl ...` command in this excercise. Just so you know.
+
+## TODO
+[] Receive send command from slacks so that the user can get a _current_ status of GPUs.
+    - [Slash commands](https://api.slack.com/apps/A063KBUA5DE/slash-commands?)
+[] Do the same thing for storages
