@@ -13,7 +13,7 @@ cd slack-gpu
 
 # Install
 chmod +x install.sh
-conda create -n slack python=3.10 && conda activate slack
+conda create -n slack python=3.10 -y && conda activate slack
 ./install.sh
 
 # Configuration File
@@ -48,3 +48,7 @@ Please do `chmod +x run.sh` before batching a job.
 
 + If somebody encountered `systemctel command not found`: Do `sudo apt-get install systemd`
 + Check if cron is running: `sudo service cron status`
+
+## Reference
++ [How to start with sending messages to your slack workspace from external sources](https://api.slack.com/apps/A062VRB6W7L/incoming-webhooks?success=1)
+    - I'm using this `curl ...` command in this excercise. Just so you know.
