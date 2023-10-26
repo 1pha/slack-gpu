@@ -57,4 +57,5 @@ sudo systemctl enable cron.service
 ## TODO
 [] Receive send command from slacks so that the user can get a _current_ status of GPUs.
     - [Slash commands](https://api.slack.com/apps/A063KBUA5DE/slash-commands?)
+
 [] Do the same thing for storages
