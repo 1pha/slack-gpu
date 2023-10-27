@@ -1,2 +1,1 @@
-conda activate slack
-python send.py
+~/.conda/envs/slack/bin/python send.py
