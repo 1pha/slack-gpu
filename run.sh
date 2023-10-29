@@ -1,1 +1,1 @@
-~/.conda/envs/slack/bin/python send.py
+~/.conda/envs/slack/bin/python ~/slack-gpu/send.py
