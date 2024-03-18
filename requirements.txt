@@ -1,3 +1,5 @@
 python-dotenv
 slack
 gputil
+flask
+slack-sdk
