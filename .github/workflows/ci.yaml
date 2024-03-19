@@ -16,6 +16,6 @@ jobs:
           flake8 .
 
           touch .env
-          echo WRONG_IPS=123 >> .env
+          echo WRONG_IPS=123\n >> .env
           echo SERVER_IPS=${{ secrets.SERVER_IPS }} >> .env
           pytest -s
