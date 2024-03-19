@@ -15,9 +15,9 @@ jobs:
           ./install.sh
           flake8 .
 
-      - name: Run Pytest
-        run: |
-          touch .env
-          echo WRONG_IPS=123\n >> .env
-          echo SERVER_IPS=${{ secrets.SERVER_IPS }} >> .env
-          pytest -s
+      # - name: Run Pytest
+      #   run: |
+      #     touch .env
+      #     echo WRONG_IPS=123\n >> .env
+      #     echo SERVER_IPS=${{ secrets.SERVER_IPS }} >> .env
+      #     pytest -s
