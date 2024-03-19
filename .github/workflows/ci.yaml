@@ -1,0 +1,21 @@
+name: Run flake8 & pytest
+
+on:
+  push:
+
+jobs:
+  CI:
+    name: Flake8
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run flake8 and pytest
+        run: |
+          chmod +x install.sh
+          ./install.sh
+          flake8 .
+
+          touch .env
+          echo WRONG_IPS=123 >> .env
+          echo SERVER_IPS=${{ secrets.SERVER_IPS }} >> .env
+          pytest -s

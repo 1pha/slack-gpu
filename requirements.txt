@@ -4,3 +4,4 @@ gputil
 flask
 slack-sdk
 requests
+pytest
