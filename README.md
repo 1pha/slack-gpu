@@ -59,7 +59,7 @@ I am running 3 GPU servers and one small personal server. The slack command `/qu
 
 #### 1. Middleware (personal server)
 
-1. Setup `.env` file: This should include GPU servers' IP account.
+1. Setup `.env` file: This should include GPU servers' IP account. Split based on ", "
 2. [Setup `ngrok`](https://dashboard.ngrok.com/get-started/setup/linux). Be aware of port.
 3. Run flask app. No need to add `--host=0.0.0.0`, since we are using `ngrok`.
 4. Test with POST command
