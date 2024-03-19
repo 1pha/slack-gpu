@@ -21,5 +21,4 @@ def send_msg(msg: str):
 
 if __name__=="__main__":
     msg = concat_msg()
-    # print(msg)
     send_msg(msg=msg)

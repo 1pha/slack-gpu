@@ -3,3 +3,4 @@ slack
 gputil
 flask
 slack-sdk
+requests
