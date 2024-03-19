@@ -10,11 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run flake8 and pytest
-        run: |
+      - run: |
           chmod +x install.sh
           ./install.sh
           flake8 .
-
+      - run: |
           touch .env
           echo WRONG_IPS=123\n >> .env
           echo SERVER_IPS=${{ secrets.SERVER_IPS }} >> .env
