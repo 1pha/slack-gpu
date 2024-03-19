@@ -1,7 +1,7 @@
 import os
 from typing import List
-import subprocess
 
+import requests
 from flask import Flask, request, make_response
 from dotenv import load_dotenv
 
@@ -13,9 +13,8 @@ load_dotenv(dotenv_path="..")
 
 
 def fetch_gpu(ip: str) -> str:
-    proc = subprocess.Popen(["curl", "-X", "GET", f"http://{ip}:5000/return-status"],
-                             stdout=subprocess.PIPE)
-    msg, _ = proc.communicate()
+    response = requests.get(url=f"https://{ip}.ngrok-free.app/return-status")
+    msg = response.text
     return msg
 
 
@@ -29,12 +28,12 @@ def gpu_webhook():
     else:
         print("error")
 
-    ips: List[str] = os.getenv("SERVER_IPS").split(" ")
+    ips: List[str] = os.getenv("SERVER_IPS").split(", ")
+    msg = ""
     for ip in ips:
-        msg = fetch_gpu(ip=ip)
-    print('Received data:', data)
-    text = "```aaa```\n```aaa```"
-    return make_response(text, 200, {"content_type": "application/json"})
+        msg = "\n".join([msg, fetch_gpu(ip=ip)])
+    print("Success")
+    return make_response(msg, 200, {"content_type": "application/json"})
 
 
 @app.route('/return-status', methods=['GET'])
